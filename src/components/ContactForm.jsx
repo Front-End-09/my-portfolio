@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import * as Z from "zod";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
+import { sweetalert } from "./SweetAlert";
+
 
 const contactFormSchema = Z.object({
   name: Z.string().nonempty("Name is required"),
@@ -35,7 +37,7 @@ const ContactForm = () => {
     try {
       const payload = {
         from_name: data.name,
-        to_name: "Full Stack Developer",
+        to_name: "Suon Ty",
         message: data.message,
         reply_to: data.email,
         subject: data.subject,
@@ -50,11 +52,11 @@ const ContactForm = () => {
       });
     } catch (error) {
       console.log("FAILED...", error);
-      alert("Failed to send message, please try again.");
+      sweetalert("success", "Failed to send message, please try again.");
     } finally {
       setLoading(false);
       reset(initialValues);
-      alert("Message sent successfully!");
+      sweetalert("success", "Message sent successfully!");
     }
   };
 

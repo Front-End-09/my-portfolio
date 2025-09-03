@@ -33,7 +33,7 @@ const About = () => {
                 </div>
                 <div className="mt-5">
                   <h1 className="text-blue-50 md:text-5xl text-3xl">
-                    David JhonSan
+                    SUON TY
                   </h1>
                   <p className="md:text-2xl mt-2">
                     I am a San francisco-based product designer with a focus on
